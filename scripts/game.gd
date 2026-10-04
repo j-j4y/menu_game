@@ -8,6 +8,7 @@ var amount_clicked = 1
 
 
 signal monkeys_changed
+signal monkey_clicked
 
 func _ready() -> void:
 	load_data()
@@ -36,5 +37,6 @@ func load_data():
 func _on_click_button_button_down() -> void:
 	monkeys += amount_clicked
 	emit_signal("monkeys_changed", monkeys)
+	emit_signal("monkey_clicked", amount_clicked)
 	save_data()
 		
