@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cjaisheiw77oo"]
 
 [ext_resource type="Theme" uid="uid://p2xexqxb18y7" path="res://menu_theme.tres" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://da7euhnjlcgtu" path="res://scripts/play_button.gd" id="2_mgrm8"]
+[ext_resource type="Script" uid="uid://bdejcr0fhkcwu" path="res://scripts/quit_button_3.gd" id="2_sa3yf"]
+[ext_resource type="Script" uid="uid://cr7bl7vsr5mr2" path="res://scripts/options_button.gd" id="3_dc4i4"]
 
 [node name="TitleScreen" type="Control" unique_id=1956287868]
 layout_mode = 3
@@ -27,7 +30,8 @@ size_flags_vertical = 4
 [node name="Title" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=44277603]
 layout_mode = 2
 theme_type_variation = &"RichTextLabelTitle"
-text = "TITLE SCREEN"
+bbcode_enabled = true
+text = "[wave]TITLE SCREEN"
 fit_content = true
 autowrap_mode = 0
 
@@ -37,6 +41,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "PLAY"
+script = ExtResource("2_mgrm8")
 
 [node name="OptionsButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1058464551]
 custom_minimum_size = Vector2(300, 100)
@@ -44,6 +49,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "OPTIONS"
+script = ExtResource("3_dc4i4")
 
 [node name="QuitButton3" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1843907899]
 custom_minimum_size = Vector2(300, 100)
@@ -51,3 +57,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "QUIT"
+script = ExtResource("2_sa3yf")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/OptionsButton" to="PanelContainer/VBoxContainer/OptionsButton" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitButton3" to="PanelContainer/VBoxContainer/QuitButton3" method="_on_pressed"]
