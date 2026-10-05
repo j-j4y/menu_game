@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo51hl2vb5nvh"
-path="res://.godot/imported/banana-holder.png-48585260b6e8ba577218da3b49fab628.ctex"
+uid="uid://dv4b5royvxl1"
+path="res://.godot/imported/banana.png-004fbf40376422814e17da34febc9cf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/banana-holder.png"
-dest_files=["res://.godot/imported/banana-holder.png-48585260b6e8ba577218da3b49fab628.ctex"]
+source_file="res://assets/banana.png"
+dest_files=["res://.godot/imported/banana.png-004fbf40376422814e17da34febc9cf8.ctex"]
 
 [params]
 

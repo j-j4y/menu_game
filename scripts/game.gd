@@ -14,6 +14,10 @@ func _ready() -> void:
 	load_data()
 	emit_signal("monkeys_changed", monkeys)
 	
+	#monkeys = 0
+	#save_data()
+	#emit_signal("monkeys_changed", monkeys) #for resetting count to 0
+	
 func save_data():
 	var data = {
 		"monkeys": monkeys,

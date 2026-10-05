@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bct27r0qvthdx"
-path="res://.godot/imported/circle-holder.png-5fc125edc96597362f59b5ff2b52718d.ctex"
+uid="uid://ldw326xi2spy"
+path="res://.godot/imported/silly-monkey.png-e32fbb832c28f1eb16a276f74b3612cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/circle-holder.png"
-dest_files=["res://.godot/imported/circle-holder.png-5fc125edc96597362f59b5ff2b52718d.ctex"]
+source_file="res://assets/silly-monkey.png"
+dest_files=["res://.godot/imported/silly-monkey.png-e32fbb832c28f1eb16a276f74b3612cc.ctex"]
 
 [params]
 

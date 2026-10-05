@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="clicker_game"
-run/main_scene="uid://dsfps4w3qnja4"
+run/main_scene="uid://cjaisheiw77oo"
 config/features=PackedStringArray("4.7", "Forward Plus")
+
+[audio]
+
+buses/default_bus_layout=""
 
 [display]
 

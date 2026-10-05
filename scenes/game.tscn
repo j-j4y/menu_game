@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://dsfps4w3qnja4"]
 
-[ext_resource type="Texture2D" uid="uid://bct27r0qvthdx" path="res://assets/circle-holder.png" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://cwts3p1blmg4t" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://cxpfp2ak2u5al" path="res://scripts/pop_up_image.gd" id="2_iywne"]
 [ext_resource type="Script" uid="uid://dlvkq826ny55g" path="res://scripts/animations.gd" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://b6vkvld3mj74q" path="res://scripts/stats.gd" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://cv4dkrrgb47dr" path="res://scripts/timer.gd" id="3_p57ef"]
+[ext_resource type="Texture2D" uid="uid://ldw326xi2spy" path="res://assets/silly-monkey.png" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://odf34d1ruoy3" path="res://rusty-hooks-font/RustyHooksRegular-nROER.ttf" id="6_u5sy4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwoa8"]
 bg_color = Color(0.67352474, 0.8410659, 0.6117638, 1)
@@ -45,6 +46,7 @@ top_level = true
 layout_mode = 0
 offset_right = 138.0
 offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("6_u5sy4")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 fit_content = true
@@ -84,14 +86,16 @@ script = ExtResource("3_lnu2h")
 [node name="MonkeyLabel" type="Label" parent="LeftPanel/MarginContainer/Stats" unique_id=761306956]
 layout_mode = 2
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_u5sy4")
 theme_override_font_sizes/font_size = 40
-text = "0 cookies"
+text = "0 monkeys"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MonkeyLabel2" type="Label" parent="LeftPanel/MarginContainer/Stats" unique_id=1081404646]
 layout_mode = 2
 theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_u5sy4")
 theme_override_font_sizes/font_size = 25
 text = "0 per second"
 horizontal_alignment = 1
@@ -101,9 +105,9 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="ClickButton" type="TextureButton" parent="LeftPanel/MarginContainer/CenterContainer" unique_id=1521988360]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
-texture_normal = ExtResource("1_uwrxv")
+texture_normal = ExtResource("6_p57ef")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -128,6 +132,7 @@ offset_top = 20.0
 offset_right = 135.5
 offset_bottom = 99.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_u5sy4")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_omhhf")
 text = "Upgrades"
