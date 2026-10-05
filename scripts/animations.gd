@@ -2,6 +2,7 @@ extends MarginContainer
 
 @onready var click_button: TextureButton = $CenterContainer/ClickButton
 @onready var rich_text_label: RichTextLabel = $"../../Indicators/RichTextLabel"
+@onready var indicators: Control = $"../../Indicators"
 
 func _ready() -> void:
 	click_button.pivot_offset = click_button.size / 2
@@ -17,4 +18,9 @@ func _on_click_button_button_up() -> void:
 
 
 func _on_main_game_monkey_clicked(amount) -> void:
-	pass # Replace with function body.
+	var indicator = rich_text_label.duplicate()
+	indicator.text = "+" + str(amount)
+	indicator.position = get_global_mouse_position()
+	indicator.visible = true
+	indicators.add_child(indicator)
+	indicator.get_child(0).start()

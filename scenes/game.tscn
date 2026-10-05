@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cxpfp2ak2u5al" path="res://scripts/pop_up_image.gd" id="2_iywne"]
 [ext_resource type="Script" uid="uid://dlvkq826ny55g" path="res://scripts/animations.gd" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://b6vkvld3mj74q" path="res://scripts/stats.gd" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://cv4dkrrgb47dr" path="res://scripts/timer.gd" id="3_p57ef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwoa8"]
 bg_color = Color(0.67352474, 0.8410659, 0.6117638, 1)
@@ -39,12 +40,21 @@ offset_bottom = 40.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Indicators" unique_id=1734429923]
 unique_name_in_owner = true
+visible = false
 top_level = true
 layout_mode = 0
-offset_right = 40.0
+offset_right = 138.0
 offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("2_iywne")
+
+[node name="DisappearTimer" type="Timer" parent="Indicators/RichTextLabel" unique_id=1966425073]
+script = ExtResource("3_p57ef")
 
 [node name="LeftPanel" type="Panel" parent="." unique_id=1571958608]
 layout_mode = 1
@@ -126,6 +136,7 @@ vertical_alignment = 1
 
 [connection signal="monkey_clicked" from="." to="LeftPanel/MarginContainer" method="_on_main_game_monkey_clicked"]
 [connection signal="monkeys_changed" from="." to="LeftPanel/MarginContainer/Stats" method="_on_main_game_monkeys_changed"]
+[connection signal="timeout" from="Indicators/RichTextLabel/DisappearTimer" to="Indicators/RichTextLabel" method="_on_disappear_timer_timeout"]
 [connection signal="button_down" from="LeftPanel/MarginContainer/CenterContainer/ClickButton" to="." method="_on_click_button_button_down"]
 [connection signal="button_down" from="LeftPanel/MarginContainer/CenterContainer/ClickButton" to="LeftPanel/MarginContainer" method="_on_click_button_button_down"]
 [connection signal="button_up" from="LeftPanel/MarginContainer/CenterContainer/ClickButton" to="LeftPanel/MarginContainer" method="_on_click_button_button_up"]
