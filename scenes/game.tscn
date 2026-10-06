@@ -5,25 +5,32 @@
 [ext_resource type="Script" uid="uid://dlvkq826ny55g" path="res://scripts/animations.gd" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://b6vkvld3mj74q" path="res://scripts/stats.gd" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://cv4dkrrgb47dr" path="res://scripts/timer.gd" id="3_p57ef"]
+[ext_resource type="Texture2D" uid="uid://ckkjbyol1rew5" path="res://assets/beach_bg.png" id="5_gee14"]
 [ext_resource type="Texture2D" uid="uid://ldw326xi2spy" path="res://assets/silly-monkey.png" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://odf34d1ruoy3" path="res://rusty-hooks-font/RustyHooksRegular-nROER.ttf" id="6_u5sy4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwoa8"]
-bg_color = Color(0.67352474, 0.8410659, 0.6117638, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjexa"]
+texture = ExtResource("5_gee14")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2cho"]
-bg_color = Color(0.4329266, 0.6837474, 0.36207953, 1)
+bg_color = Color(0.58303314, 0.900064, 0.9692858, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omhhf"]
 content_margin_left = 20.0
 content_margin_top = 5.0
 content_margin_right = 20.0
 content_margin_bottom = 5.0
-bg_color = Color(0.770434, 0.920022, 0.6739452, 1)
+bg_color = Color(0.3254902, 0.5137255, 0.5529412, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow4ec"]
+bg_color = Color(0.32156864, 0.5137255, 0.5529412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+bg_color = Color(0.8980392, 0.83137256, 0.47058824, 1)
 
 [node name="MainGame" type="Control" unique_id=196589691]
 layout_mode = 3
@@ -64,7 +71,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 825.0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nwoa8")
+theme_override_styles/panel = SubResource("StyleBoxTexture_yjexa")
 
 [node name="MarginContainer" type="MarginContainer" parent="LeftPanel" unique_id=1653112684]
 layout_mode = 1
@@ -85,24 +92,16 @@ script = ExtResource("3_lnu2h")
 
 [node name="MonkeyLabel" type="Label" parent="LeftPanel/MarginContainer/Stats" unique_id=761306956]
 layout_mode = 2
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_u5sy4")
 theme_override_font_sizes/font_size = 40
 text = "0 monkeys"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MonkeyLabel2" type="Label" parent="LeftPanel/MarginContainer/Stats" unique_id=1081404646]
-layout_mode = 2
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("6_u5sy4")
-theme_override_font_sizes/font_size = 25
-text = "0 per second"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="CenterContainer" type="CenterContainer" parent="LeftPanel/MarginContainer" unique_id=1438581688]
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="ClickButton" type="TextureButton" parent="LeftPanel/MarginContainer/CenterContainer" unique_id=1521988360]
 custom_minimum_size = Vector2(500, 500)
@@ -139,9 +138,31 @@ text = "Upgrades"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Upgrade1" type="Button" parent="RightPanel" unique_id=450462591]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -189.0
+offset_right = 145.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_u5sy4")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_ow4ec")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gee14")
+text = "double bananas (100)"
+
 [connection signal="monkey_clicked" from="." to="LeftPanel/MarginContainer" method="_on_main_game_monkey_clicked"]
 [connection signal="monkeys_changed" from="." to="LeftPanel/MarginContainer/Stats" method="_on_main_game_monkeys_changed"]
 [connection signal="timeout" from="Indicators/RichTextLabel/DisappearTimer" to="Indicators/RichTextLabel" method="_on_disappear_timer_timeout"]
 [connection signal="button_down" from="LeftPanel/MarginContainer/CenterContainer/ClickButton" to="." method="_on_click_button_button_down"]
 [connection signal="button_down" from="LeftPanel/MarginContainer/CenterContainer/ClickButton" to="LeftPanel/MarginContainer" method="_on_click_button_button_down"]
 [connection signal="button_up" from="LeftPanel/MarginContainer/CenterContainer/ClickButton" to="LeftPanel/MarginContainer" method="_on_click_button_button_up"]
+[connection signal="pressed" from="RightPanel/Upgrade1" to="." method="_on_upgrade_1_pressed"]
