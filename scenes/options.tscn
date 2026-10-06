@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://bqf6fva86uj8o"]
 
+[ext_resource type="StyleBox" uid="uid://7cya8piiuihy" path="res://new_style_box_flat.tres" id="1_c2u1v"]
+[ext_resource type="FontFile" uid="uid://odf34d1ruoy3" path="res://rusty-hooks-font/RustyHooksRegular-nROER.ttf" id="2_2iy26"]
+[ext_resource type="Theme" uid="uid://p2xexqxb18y7" path="res://menu_theme.tres" id="3_kv8mn"]
+[ext_resource type="Script" uid="uid://mubmxk37ijkb" path="res://scripts/back_button.gd" id="4_kv8mn"]
+
 [node name="Options" type="Control" unique_id=1945095867]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +12,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=127752599]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.99626696)
+theme_override_styles/panel = ExtResource("1_c2u1v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1220481876]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Options" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1906732594]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_2iy26")
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = "[wave]OPTIONS"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=696495012]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("3_kv8mn")
+theme_override_fonts/font = ExtResource("2_2iy26")
+text = "MUSIC VOLUME"
+
+[node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1092209868]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("3_kv8mn")
+theme_override_fonts/font = ExtResource("2_2iy26")
+text = "<- BACK"
+script = ExtResource("4_kv8mn")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BackButton" to="PanelContainer/VBoxContainer/BackButton" method="_on_pressed"]

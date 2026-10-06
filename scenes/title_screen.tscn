@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://da7euhnjlcgtu" path="res://scripts/play_button.gd" id="2_mgrm8"]
 [ext_resource type="Script" uid="uid://bdejcr0fhkcwu" path="res://scripts/quit_button_3.gd" id="2_sa3yf"]
 [ext_resource type="Script" uid="uid://cr7bl7vsr5mr2" path="res://scripts/options_button.gd" id="3_dc4i4"]
+[ext_resource type="AudioStream" uid="uid://0yq2m7p7mycn" path="res://assets/monkey_music.mp3" id="5_dc4i4"]
 
 [node name="TitleScreen" type="Control" unique_id=1956287868]
 layout_mode = 3
@@ -58,6 +59,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "QUIT"
 script = ExtResource("2_sa3yf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=962819696]
+stream = ExtResource("5_dc4i4")
+autoplay = true
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/PlayButton" method="_on_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/OptionsButton" to="PanelContainer/VBoxContainer/OptionsButton" method="_on_pressed"]
