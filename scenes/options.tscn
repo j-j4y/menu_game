@@ -3,6 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://7cya8piiuihy" path="res://new_style_box_flat.tres" id="1_c2u1v"]
 [ext_resource type="FontFile" uid="uid://odf34d1ruoy3" path="res://rusty-hooks-font/RustyHooksRegular-nROER.ttf" id="2_2iy26"]
 [ext_resource type="Theme" uid="uid://p2xexqxb18y7" path="res://menu_theme.tres" id="3_kv8mn"]
+[ext_resource type="PackedScene" uid="uid://c1we1yntt8x5t" path="res://scenes/volume_slider.tscn" id="4_1sggn"]
 [ext_resource type="Script" uid="uid://mubmxk37ijkb" path="res://scripts/back_button.gd" id="4_kv8mn"]
 
 [node name="Options" type="Control" unique_id=1945095867]
@@ -45,6 +46,14 @@ size_flags_horizontal = 8
 theme = ExtResource("3_kv8mn")
 theme_override_fonts/font = ExtResource("2_2iy26")
 text = "MUSIC VOLUME"
+
+[node name="HSlider" parent="PanelContainer/VBoxContainer/Button" unique_id=1148056796 instance=ExtResource("4_1sggn")]
+layout_mode = 0
+offset_left = -112.000015
+offset_top = 13.315208
+offset_right = -12.000015
+offset_bottom = 29.315208
+bus_name = "Master"
 
 [node name="BackButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1092209868]
 layout_mode = 2

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ckkjbyol1rew5" path="res://assets/beach_bg.png" id="5_gee14"]
 [ext_resource type="Texture2D" uid="uid://ldw326xi2spy" path="res://assets/silly-monkey.png" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://odf34d1ruoy3" path="res://rusty-hooks-font/RustyHooksRegular-nROER.ttf" id="6_u5sy4"]
+[ext_resource type="AudioStream" uid="uid://0yq2m7p7mycn" path="res://assets/monkey_music.mp3" id="9_0tnpc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjexa"]
 texture = ExtResource("5_gee14")
@@ -158,6 +159,10 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_ow4ec")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gee14")
 text = "double bananas (100)"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1541443223]
+stream = ExtResource("9_0tnpc")
+autoplay = true
 
 [connection signal="monkey_clicked" from="." to="LeftPanel/MarginContainer" method="_on_main_game_monkey_clicked"]
 [connection signal="monkeys_changed" from="." to="LeftPanel/MarginContainer/Stats" method="_on_main_game_monkeys_changed"]
