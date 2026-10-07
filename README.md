@@ -2,7 +2,8 @@
 
 ## tutorials used
 - [base game](https://www.youtube.com/watch?v=abQI0lEW71c&list=PLnjunpjJfj0b4vcDCylwT1adf2IYaUG4V): 2 hours 
-- [main menu](https://www.youtube.com/watch?v=-qJo5AfnB0g&t=130s): 45 mins 
+- [main menu](https://www.youtube.com/watch?v=-qJo5AfnB0g&t=130s): 45 mins
+- [volume slider](https://www.youtube.com/watch?v=aFkRmtGiZCw&t=62s)
 
 ## assets used
 - monkey drawn by jadynn: 15 mins
@@ -12,8 +13,8 @@
 - music made by jadynn
 
 ## UI/UX Changes
-- options menu made by hanna: mins
-- 
+- options menu made by jadynn: 45 mins
+- volume slider made by jadynn
 
 ## Menu Flow Chart
 <img width="786" height="587" alt="menu-flow" src="https://github.com/user-attachments/assets/e8e510bf-acea-450d-9fde-a0e31a856a9f" />
