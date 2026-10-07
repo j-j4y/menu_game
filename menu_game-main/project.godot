@@ -21,6 +21,7 @@ buses/default_bus_layout=""
 [autoload]
 
 TitleScreen="*uid://cjaisheiw77oo"
+Global="*uid://gcjelqd4wlg1"
 
 [display]
 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqf6fva86uj8o"]
 
 [ext_resource type="StyleBox" uid="uid://7cya8piiuihy" path="res://new_style_box_flat.tres" id="1_c2u1v"]
+[ext_resource type="Script" uid="uid://bpb6xn8a81qxc" path="res://scenes/options.gd" id="1_uon5e"]
 [ext_resource type="FontFile" uid="uid://odf34d1ruoy3" path="res://rusty-hooks-font/RustyHooksRegular-nROER.ttf" id="2_2iy26"]
 [ext_resource type="Theme" uid="uid://p2xexqxb18y7" path="res://menu_theme.tres" id="3_kv8mn"]
 [ext_resource type="PackedScene" uid="uid://c1we1yntt8x5t" path="res://scenes/volume_slider.tscn" id="4_1sggn"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uon5e")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=127752599]
 layout_mode = 1
@@ -34,6 +36,7 @@ text = "
 "
 
 [node name="Options" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1906732594]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("2_2iy26")
@@ -44,7 +47,8 @@ fit_content = true
 autowrap_mode = 0
 horizontal_alignment = 1
 
-[node name="Music Volume Text" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1770477863]
+[node name="MusicVolumeText" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1770477863]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "
@@ -63,14 +67,14 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=696495012]
+[node name="EnglishButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=696495012]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("3_kv8mn")
 theme_override_fonts/font = ExtResource("2_2iy26")
 text = "English"
 
-[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2023244658]
+[node name="EspanolButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=2023244658]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("3_kv8mn")
@@ -89,4 +93,6 @@ theme_override_fonts/font = ExtResource("2_2iy26")
 text = "<- BACK"
 script = ExtResource("4_kv8mn")
 
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/EnglishButton" to="." method="_on_english_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/EspanolButton" to="." method="_on_espanol_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/BackButton" to="PanelContainer/VBoxContainer/BackButton" method="_on_pressed"]
