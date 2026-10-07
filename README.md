@@ -14,7 +14,11 @@
 
 ## UI/UX Changes
 - options menu made by jadynn: 45 mins
-- volume slider made by jadynn
+- volume slider made by jadynn + hanna(1 hr)
+    - (because we both followed the same tutorial simultaneously somehow)
 
 ## Menu Flow Chart
 <img width="786" height="587" alt="menu-flow" src="https://github.com/user-attachments/assets/e8e510bf-acea-450d-9fde-a0e31a856a9f" />
+
+## Other Work
+- accessibility research by hanna: (30 mins)
